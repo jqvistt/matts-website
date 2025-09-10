@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
 
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
+		transform: translatey(-10px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
+		transform: translatey(0px);
+	}
+}
+
 body, html{
 
     margin: 0;
@@ -67,22 +82,22 @@ body, html{
 }
 
 .container{
-
+    /*animation: float 6s ease-in-out infinite;*/
+    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
+    border:2px solid transparent;
+    border-radius: 2em;
     display: flex;
-
     flex-direction: column;
-
+    width: fit-content;
     align-items: center;
-
-    justify-content: top;
-
-    ;
-
     text-align: center;
-
-    margin: 20px;
+    margin: 20px auto;
     padding: 30px;
-
     background-color: #1a1a1a;
+}
+
+.container p{
+
+    font-size: 20px;;
 
 }
