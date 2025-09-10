@@ -1,0 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Asimovian&display=swap');
+
+body, html{
+    
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+    background-color: #121212;
+
+    color: white;
+}
+
+h1{
+
+    font-family: Asimovian;
+
+}
