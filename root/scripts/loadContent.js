@@ -3,6 +3,10 @@
  * @param {string} assetPath - Path to the asset (e.g., 'index.html').
  * @param {string} targetId - ID of the target element.
  */
+
+
+
+//Function that loads an html file into in this case the main content div on the page. We use this for a more seamless experience.
 function loadAssetIntoDiv(assetPath, targetId) {
   fetch(assetPath)
     .then((response) => {
@@ -30,7 +34,6 @@ function loadAssetIntoDiv(assetPath, targetId) {
     });
 }
 
-// Example usage: load navbar.html into #main-nav
 document.addEventListener("DOMContentLoaded", function () {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
@@ -42,37 +45,53 @@ document.addEventListener("DOMContentLoaded", function () {
       if (navRight) {
         navRight.setAttribute("style", "font-size: 3em;");
       }
-      attachNavListeners();
+      attatchClickListeners();
     }, 300);
   } else {
     loadAssetIntoDiv("pages/navbar.html", "nav-right");
     // Wait for navbar to load before accessing nav-right
     setTimeout(() => {
-      attachNavListeners();
+      attatchClickListeners();
     }, 300);
   }
 
+  //switch case that fetches last loaded page from session storage and loads that page. If no page is found (a fresh session of the page is opened up), it defaults to home.
+  switch (sessionStorage.getItem("pageLoaded")) {
+    case "home":
+      loadAssetIntoDiv("pages/home.html", "content");
+      break;
+    case "contact":
+      loadAssetIntoDiv("pages/contact.html", "content");
+      break;
+    case "products":
+      loadAssetIntoDiv("pages/products.html", "content");
+      break;
+    default:
+      sessionStorage.setItem("pageLoaded", "home");
+      loadAssetIntoDiv("pages/home.html", "content");
+  }
+
+  // Default to loading home page if no page is set
+  if (!sessionStorage.getItem("pageLoaded"))
   loadAssetIntoDiv("pages/home.html", "content");
 
-  function attachNavListeners() {
+  
+
+  function attatchClickListeners() {
+
     const homeBtn = document.getElementById("homebtn");
     if (homeBtn) {
       homeBtn.addEventListener("click", function () {
         loadAssetIntoDiv("pages/home.html", "content");
+        sessionStorage.setItem("pageLoaded", "home");
       });
     }
-    /*
-    const testBtn = document.getElementById("test");
-    if (testBtn) {
-      testBtn.addEventListener("click", function () {
-        loadAssetIntoDiv("pages/contact.html", "content");
-      });
-    }
-    */
+
     const contactBtn = document.getElementById("contactbtn");
     if (contactBtn) {
       contactBtn.addEventListener("click", function () {
         loadAssetIntoDiv("pages/contact.html", "content");
+        sessionStorage.setItem("pageLoaded", "contact");
       });
     }
 
@@ -80,7 +99,10 @@ document.addEventListener("DOMContentLoaded", function () {
     if (productsBtn) {
       productsBtn.addEventListener("click", function () {
         loadAssetIntoDiv("pages/products.html", "content");
+        sessionStorage.setItem("pageLoaded", "products");
       });
     }
+
   }
+
 });
