@@ -5,6 +5,10 @@
  */
 
 
+var productevt = new CustomEvent("ProductPageLoaded");
+var contactevt = new CustomEvent("ContactPageLoaded");
+
+
 
 //Function that loads an html file into in this case the main content div on the page. We use this for a more seamless experience.
 function loadAssetIntoDiv(assetPath, targetId) {
@@ -16,12 +20,19 @@ function loadAssetIntoDiv(assetPath, targetId) {
         );
         throw new Error("Network response was not ok");
       }
-    return response.text();
+      return response.text();
     })
     .then((data) => {
       const target = document.getElementById(targetId);
       if (target) {
         target.innerHTML = data;
+        // Dispatch event if products or contact page is loaded
+        if (assetPath.includes("products.html")) {
+          document.dispatchEvent(productevt);
+        }
+        if (assetPath.includes("contact.html")) {
+          document.dispatchEvent(contactevt);
+        }
       } else {
         console.error(`Element with id "${targetId}" not found.`);
       }
@@ -33,7 +44,6 @@ function loadAssetIntoDiv(assetPath, targetId) {
       );
     });
 }
-
 document.addEventListener("DOMContentLoaded", function () {
   const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
   if (isMobile) {
@@ -65,6 +75,7 @@ document.addEventListener("DOMContentLoaded", function () {
       break;
     case "products":
       loadAssetIntoDiv("pages/products.html", "content");
+      document.dispatchEvent(productevt);
       break;
     default:
       sessionStorage.setItem("pageLoaded", "home");

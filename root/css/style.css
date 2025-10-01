@@ -15,21 +15,45 @@
 	}
 }
 
-body, html{
+html, body{
+
+    height: 100%;
 
     margin: 0;
 
     padding: 0;
-
-    padding-top: 0;
-
-    box-sizing: border-box;
 
     background-color: #2a2a2a;
 
     color: white;
 
     font-family: Arial, Helvetica, sans-serif;
+
+}
+
+body{
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 100vh;
+
+}
+
+main{
+    
+    padding-inline: 2vh;
+    margin-top: 10vh;
+    flex: 1;
+
+}
+
+.navbar, footer{
+
+    width: 100%;
+    box-sizing: border-box;
+    
 }
 
 .navbar h1{
@@ -46,18 +70,37 @@ body, html{
 
 .navbar{
 
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 10px 20px;
-
     background-color: #1a1a1a;
-
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    box-sizing: border-box;
 
+}
+
+.navbar.hide{
+
+    transform: translateY(-100%);
+
+}
+
+.navbar.show{
+
+    transform: translateY(0);
+
+}
+
+#nav-right {
+    display: flex;
+    align-items: center;
 }
 
 #nav-right a{
@@ -65,7 +108,6 @@ body, html{
     color: white;
     font-size: 2em;
     text-decoration: none;
-
     margin-left: 3vw;
 
 }
@@ -91,14 +133,40 @@ footer {
     padding: 10px;
     background-color: #1a1a1a;
     box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    width: 100vw;
     display: flex;
     flex-direction: column;
-    width: 100vw;
     z-index: 1000;
+}
+
+#products-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
+#products-list img {
+    width: 200px;
+    height: auto;
+    border-radius: 1em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.product-box {
+    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
+    border:2px solid transparent;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 220px;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: #1a1a1a;
 }
 
 .container{
@@ -160,4 +228,45 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #430b64;
+}
+
+#thankyou-popup {
+  display: none;
+  position: fixed;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: green;
+  border-radius: 2em;
+  border:2px solid;
+  padding: 30px 40px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  font-size: 1.2em;
+}
+
+.mottoBox{
+    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
+    border:2px solid transparent;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: left;
+    text-align: left;
+    margin: 20px auto;
+    padding: 30px;
+    background-color: #1a1a1a;
+}
+
+.mottoBox img{
+    width: 30%;
+    height: auto;
+    margin-top: 10px;
+      animation: float 2s ease-in-out infinite;
+
+}
+
+.mottobox p{
+    font-size: 10px;
 }
