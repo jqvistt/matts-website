@@ -76,6 +76,8 @@ document.addEventListener("DOMContentLoaded", function () {
     case "products":
       loadAssetIntoDiv("pages/products.html", "content");
       document.dispatchEvent(productevt);
+    case "about":
+      loadAssetIntoDiv("pages/about.html", "content");
       break;
     default:
       sessionStorage.setItem("pageLoaded", "home");
@@ -111,6 +113,13 @@ document.addEventListener("DOMContentLoaded", function () {
       productsBtn.addEventListener("click", function () {
         loadAssetIntoDiv("pages/products.html", "content");
         sessionStorage.setItem("pageLoaded", "products");
+      });
+    }
+    const aboutBtn = document.getElementById("aboutbtn");
+    if (aboutBtn) {
+      aboutBtn.addEventListener("click", function () {
+        loadAssetIntoDiv("pages/about.html", "content");
+        sessionStorage.setItem("pageLoaded", "about");
       });
     }
 

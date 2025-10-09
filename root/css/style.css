@@ -2,17 +2,25 @@
 
 @keyframes float {
 	0% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
 	50% {
-		box-shadow: 0 25px 15px 0px rgba(0,0,0,0.2);
 		transform: translatey(-10px);
 	}
 	100% {
-		box-shadow: 0 5px 15px 0px rgba(0,0,0,0.6);
 		transform: translatey(0px);
 	}
+}
+
+@keyframes slideInFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 html, body{
@@ -38,6 +46,12 @@ body{
     flex-direction: column;
 
     min-height: 100vh;
+
+}
+
+body h1{
+
+    font-size: 3vw;
 
 }
 
@@ -157,7 +171,7 @@ footer {
 }
 
 .product-box {
-    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
+    background:rgba(245, 245, 245, 0.049);
     border:2px solid transparent;
     border-radius: 2em;
     display: flex;
@@ -170,8 +184,7 @@ footer {
 }
 
 .container{
-    /*animation: float 6s ease-in-out infinite;*/
-    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
+    animation: slideInFromBottom 1s ease-out;
     border:2px solid transparent;
     border-radius: 2em;
     display: flex;
@@ -181,12 +194,12 @@ footer {
     text-align: center;
     margin: 20px auto;
     padding: 30px;
-    background-color: #1a1a1a;
 }
 
 .container p{
 
-    font-size: 20px;;
+    font-size: 1.5vw;;
+    /* max-width: 45%; */
 
 }
 
@@ -197,17 +210,18 @@ footer {
     flex-direction: column;
     padding: 20px;
     border:2px solid transparent;
-    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
-    border-radius: 2em;
-    margin: 20px 0 20px 60px; /* Stick to left, add left margin */
-    width: 500px;
+    border-radius: 2;  
+    width: 100%;
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
     align-self: flex-start; /* If inside a flex container */
+    margin: auto;
+    max-width: 700px;
+    gap: 10px;
 }
 
 input[type=text], select, textarea {
-  width: 100%;
+  width: 550px;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 4px;
@@ -215,6 +229,9 @@ input[type=text], select, textarea {
   margin-top: 6px;
   margin-bottom: 16px;
   resize: vertical;
+  flex-direction: column;
+  display: flex;
+
 }
 
 input[type=submit] {
@@ -228,6 +245,14 @@ input[type=submit] {
 
 input[type=submit]:hover {
   background-color: #430b64;
+}
+
+@media (min-width: 800px) {
+  .input[type=text], select, textarea {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
 }
 
 #thankyou-popup {
@@ -244,29 +269,83 @@ input[type=submit]:hover {
   z-index: 1000;
   font-size: 1.2em;
 }
+@media (max-width: 600px) {
+  input[type=text], select, textarea {
+    width: 100%;
+  }
+  input[type=submit] {
+    width: 100%;
+    font-size: smaller;
+  }
+}
 
-.mottoBox{
-    background: linear-gradient(black, black) padding-box, linear-gradient(to right, #ff00cc, #3333ff) border-box;
+
+.mottoBoxContainer{
+    z-index: 1;
     border:2px solid transparent;
     border-radius: 2em;
+    background-color: rgba(245, 245, 245, 0.049);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    gap: 0px; /* Add gap to control spacing between boxes */;
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-in-out 0.5s forwards;
+}
+
+.mottoBox{
+    border:2px solid transparent;
+    border-radius: 2em;
+/*     background-color: rgba(245, 245, 245, 0.049);
+ */    padding: 20px 0 20px 0;
     display: flex;
     flex-direction: column;
-    width: 50%;
-    align-items: left;
-    text-align: left;
-    margin: 20px auto;
-    padding: 30px;
-    background-color: #1a1a1a;
+    width: 20%;
+    align-items:center ;
+    text-align: center;
+    margin: 0 0; /* Remove auto margin to avoid extra spacing */
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-in-out 0.5s forwards;
+
 }
 
 .mottoBox img{
-    width: 30%;
+    width: 50%;
     height: auto;
     margin-top: 10px;
-      animation: float 2s ease-in-out infinite;
+    animation: float 2s ease-in-out infinite;
+    animation-delay: 1s;
 
 }
 
 .mottobox p{
     font-size: 10px;
+}
+
+.infoBox{
+    border:2px solid transparent;
+    border-radius: 2em;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items:center ;
+    text-align: center;
+    margin: 20px auto;
+    padding: 30px;
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-in-out 0.5s forwards;
+}
+
+.Map {
+    width: 80%;
+    height: auto;
+    border-radius: 2em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-self: center;
+    opacity: 0;
+    animation: slideInFromBottom 1s ease-in-out 0.5s forwards;
 }
