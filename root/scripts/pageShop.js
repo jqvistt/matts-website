@@ -11,7 +11,7 @@ class Product {
   }
 
   display() {
-    document.addEventListener("ProductPageLoaded", () => {
+    document.addEventListener("DOMContentLoaded", () => {
       const content = document.getElementById("content");
 
       const productDiv = document.getElementById("products-list");
@@ -36,14 +36,6 @@ class Product {
       img.src = this.imageUrl;
       img.alt = this.name;
       productBox.appendChild(img);
-
-      productDiv.appendChild(productDiv);
-
-      // Remove cart functionality for now or implement cart logic
-      // const addButton = document.createElement("button");
-      // addButton.textContent = "Add to Cart";
-      // addButton.onclick = () => this.addToCart(cart);
-      // productDiv.appendChild(addButton);
     });
   }
 }

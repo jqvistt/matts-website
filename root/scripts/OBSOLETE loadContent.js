@@ -4,11 +4,7 @@
  * @param {string} targetId - ID of the target element.
  */
 
-
-var productevt = new CustomEvent("ProductPageLoaded");
-var contactevt = new CustomEvent("ContactPageLoaded");
-
-
+var newContent = new CustomEvent("newContentLoaded");
 
 //Function that loads an html file into in this case the main content div on the page. We use this for a more seamless experience.
 function loadAssetIntoDiv(assetPath, targetId) {
@@ -28,7 +24,7 @@ function loadAssetIntoDiv(assetPath, targetId) {
         target.innerHTML = data;
         // Dispatch event if products or contact page is loaded
         if (assetPath.includes("products.html")) {
-          document.dispatchEvent(productevt);
+          document.dispatchEvent(newContent);
         }
         if (assetPath.includes("contact.html")) {
           document.dispatchEvent(contactevt);
@@ -69,18 +65,23 @@ document.addEventListener("DOMContentLoaded", function () {
   switch (sessionStorage.getItem("pageLoaded")) {
     case "home":
       loadAssetIntoDiv("pages/home.html", "content");
+      document.dispatchEvent(newContent);
       break;
     case "contact":
       loadAssetIntoDiv("pages/contact.html", "content");
+      document.dispatchEvent(newContent);
       break;
     case "products":
       loadAssetIntoDiv("pages/products.html", "content");
-      document.dispatchEvent(productevt);
+      document.dispatchEvent(newContent);
     case "about":
       loadAssetIntoDiv("pages/about.html", "content");
-      break;
+      document.dispatchEvent(newContent);
+      break;newContentEvent
     default:
       sessionStorage.setItem("pageLoaded", "home");
+      document.dispatchEvent(newContent);
+
       loadAssetIntoDiv("pages/home.html", "content");
   }
 
