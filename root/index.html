@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matts</title>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Matts</title>
 
-    <link rel="stylesheet" href="css/style.css">
-    <script src="scripts/stickyNavBar.js"></script>
-    <script src="scripts/iframe.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+        <script src="scripts/stickyNavBar.js"></script>
+        <script src="scripts/iframe.js"></script>
 
+    </head>
+    <body>
 
-
-</head>
-<body>
-
-<div class="backgroundImage">
-    <img src="images/backgroundImage.jpg" alt="background image">
-</div>
-
-    <!-- NAVBAR START -->
-
-        <div class="navbar" >
-
-            <a class="active" href="index.html">Home</a>
-            <a href="pages/products.html">Products</a>
-            <a href="pages/contact.html">Contact</a>
-            <a href="pages/about.html">About</a>
-
+        <div class="backgroundImage">
+            <img src="images/backgroundImage.jpg" alt>
         </div>
-    
-    <!-- NAVBAR END -->
-        
 
+        <!-- NAVBAR START -->
+        <nav>
+
+            <div class="navbar">
+
+                <a class="active" href="index.html">Home</a>
+                <a href="pages/products.html">Products</a>
+                <a href="pages/contact.html">Contact</a>
+                <a href="pages/about.html">Webrapport</a>
+
+            </div>
+
+        </nav>
+
+        <!-- NAVBAR END -->
 
         <div class="container">
 
@@ -42,110 +43,142 @@
                 of products designed to enhance your driving experience.</p>
         </div>
 
+        <table class="mottoBoxTable">
+            <!-- ROW 1 of TABLE -->
+            <tr>
+                <th><img src="images/handmadeIcon.svg" alt></th>
+                <th><img src="images/reliableIcon.svg" alt></th>
+                <th><img src="images/uniqueIcon.svg" alt></th>
+            </tr>
 
-            <Table class="mottoBoxTable">
-                <!-- ROW 1 of TABLE -->
-                <tr>
-                    <th ><img src="images/handmadeIcon.svg" alt="handmade"></th>
-                    <th ><img src="images/reliableIcon.svg" alt="handmade"></th>
-                    <th ><img src="images/uniqueIcon.svg" alt="handmade"></th>
-                </tr>
+            <!-- ROW 2 OF TABLE -->
+            <tr>
+                <td><h2>Handmade with Pride</h2></td>
+                <td><h2>Reliability like no other</h2></td>
+                <td><h2>Unique just like me</h2></td>
+            </tr>
 
-                <!-- ROW 2 OF TABLE -->
-                <tr>
-                    <td><h2>Handmade with Pride</h2></td>
-                    <td><h2>Reliability like no other</h2></td>
-                    <td><h2>Unique just like me</h2></td>
-                </tr>
+            <!-- ROW 3 OF TABLE -->
+            <tr>
+                <td><p>Each speedometer is meticulously crafted by hand,
+                        ensuring precision and quality in every
+                        product.</p></td>
+                <td><p>Our speedometers are built to last, delivering consistent
+                        and accurate readings you can trust on every
+                        journey.</p></td>
+                <td><p>No two speedometers are alike—each one features distinct
+                        details and finishes, making your dashboard truly one of
+                        a kind.</p></td>
+            </tr>
 
-                <!-- ROW 3 OF TABLE -->
-                <tr>
-                    <td><p>Each speedometer is meticulously crafted by hand, ensuring precision and quality in every product.</p></td>
-                    <td><p>Our speedometers are built to last, delivering consistent and accurate readings you can trust on every journey.</p></td>
-                    <td><p>No two speedometers are alike—each one features distinct details and finishes, making your dashboard truly one of a kind.</p></td>
-                </tr>
-                
-            </Table>
+        </table>
 
         <div class="iframe">
-            
-             
+
             <div class="imgcontainer">
-                <button class="fullscreen-btn" onclick="toggleFullscreen(this)">⛶</button>
+                <button class="fullscreen-btn"
+                    onclick="toggleFullscreen(this)">⛶</button>
 
                 <div class="mySlides">
                     <div class="numbertext">1 / 6</div>
-                    <img src="images/img1.avif">
+                    <img src="images/img1.jpg" alt>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">2 / 6</div>
-                    <img src="images/img2.avif">
+                    <img src="images/img2.jpg" alt>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">3 / 6</div>
-                    <img src="images/img7.avif">
+                    <img src="images/img7.jpg" alt>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">4 / 6</div>
-                    <img src="images/img4.avif">
+                    <img src="images/img4.jpg" alt>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">5 / 6</div>
-                    <img src="images/img5.avif">
+                    <img src="images/img5.jpg" alt>
                 </div>
 
                 <div class="mySlides">
                     <div class="numbertext">6 / 6</div>
-                    <img src="images/img6.avif">
+                    <img src="images/img6.jpg" alt>
                 </div>
-                
+
                 <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
                 <a class="next" onclick="plusSlides(1)">&#10095;</a>
 
-                
-
                 <div class="imgRow">
                     <div class="imgColumn">
-                        <img class="demo cursor" src="images/img1.avif"
+                        <img class="demo cursor" src="images/img1.jpg"
                             style="width:100%" onclick="currentSlide(1)"
-                            alt="img1">
+                            alt>
                     </div>
                     <div class="imgColumn">
-                        <img class="demo cursor" src="images/img2.avif"
+                        <img class="demo cursor" src="images/img2.jpg"
                             style="width:100%" onclick="currentSlide(2)"
-                            alt="img2">
+                            alt>
                     </div>
                     <div class="imgColumn">
-                        <img class="demo cursor" src="images/img7.avif"
+                        <img class="demo cursor" src="images/img7.jpg"
                             style="width:100%" onclick="currentSlide(3)"
-                            alt="img3">
+                            alt>
                     </div>
                     <div class="imgColumn">
-                        <img class="demo cursor" src="images/img4.avif"
+                        <img class="demo cursor" src="images/img4.jpg"
                             style="width:100%" onclick="currentSlide(4)"
-                            alt="img4">
+                            alt>
                     </div>
                     <div class="imgColumn">
-                        <img class="demo cursor" src="images/img5.avif"
+                        <img class="demo cursor" src="images/img5.jpg"
                             style="width:100%" onclick="currentSlide(5)"
-                            alt="img5">
+                            alt>
                     </div>
                     <div class="imgColumn">
-                        <img class="demo cursor" src="images/img6.avif"
+                        <img class="demo cursor" src="images/img6.jpg"
                             style="width:100%" onclick="currentSlide(6)"
-                            alt="img6">
+                            alt>
                     </div>
                 </div>
 
             </div>
-         <div id="caption" class="caption-container"></div>
-            
+            <div id="caption" class="caption-container"></div>
+
         </div>
-        
-            
-        </body>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About Us</h3>
+                    <p>A small solo person project on making my own speedometers
+                        for others.</p>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="pages/products.html">Products</a></li>
+                        <li><a href="pages/about.html">Webrapport</a></li>
+                        <li><a href="pages/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Email: info@matts.com</p>
+                    <p>Phone: (555) 123-4567</p>
+                    <p>Address: Majstranden, Helsinki</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Matts. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
 </html>

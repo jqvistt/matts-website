@@ -1,8 +1,8 @@
 img1Caption = "<ul><li>Speedometer</li><li>2x Front led lights</li><li>horn</li><li>Temperature gauge</li></ul>";
 img2Caption = "<ul><li>Ignition with 2x keys</li><li>Low profilelight switch</li><li>Front Blinkers</li></ul>";
 img3Caption = "<ul><li>Conntector cabels</li><li>2x Back led lights</li><li>Lisence plate light</li><li>Back brake light</li></ul>";
-img4Caption = "<ul><li> </li><li> Connector cabels </li><li>   </li></ul>";
-img5Caption = "<ul><li> </li><li> </li><li> </li></ul>";
+img4Caption = "<ul><li> Connector cabels </li>";
+img5Caption = "<ul><li> Connector cabels </li></ul>";
 img6Caption = "<ul><li>Lisence plate light in use</li><li>Back brake light in use</li><li>back blinkers</li></ul>";
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -63,7 +63,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.toggleFullscreen = function(btn) {
-        // Find the visible slide
         const container = btn.closest('.imgcontainer');
         const visibleSlide = container.querySelector('.mySlides[style*="display: block"]');
         if (visibleSlide) {

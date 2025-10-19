@@ -1,62 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Matts - Contact</title>
     <link rel="stylesheet" href="../css/style.css">
     <script src="../scripts/stickyNavBar.js"></script>
     <script src="../scripts/sendMessage.js"></script>
-</head>
-<body>
+  </head>
+  <body>
 
-  <!-- NAVBAR START -->
-        <div class="navbar" >
+    <!-- NAVBAR START -->
+    <nav>
 
-            <a href="../index.html">Home</a>
-            <a href="products.html">Products</a>
-            <a class="active" href="contact.html">Contact</a>
-            <a href="about.html">About</a>
+      <div class="navbar">
 
-        </div>
+        <a href="../index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a class="active" href="contact.html">Contact</a>
+        <a href="about.html">Webrapport</a>
+
+      </div>
+
+    </nav>
+
     <!-- NAVBAR END -->
 
     <div class="container">
 
-        <h1>Contact Us</h1>
-        <p>If you have any questions, concerns, or feedback, please don't hesitate to reach out to us. We're here to help!</p>
+      <h1>Contact Us</h1>
+      <p>If you have any questions, concerns, or feedback, please don't hesitate
+        to reach out to us. We're here to help!</p>
 
     </div>
-    
-     <div class="Contact" id="popup-form-container">
-        
-    <form id="contact-form">
-    <label for="fname">First Name*</label>
-    <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
 
-    <label for="lname">Last Name*</label>
-    <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+    <div class="Contact">
 
-    <label for="email">Email*</label>
-    <input type="text" id="email" name="email" placeholder="Your email.." required>
+      <form id="contact-form">
+        <label for="fname">First Name*</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name.."
+          required>
 
-    <label for="country">Country</label>
-    <select id="country" name="country">
-      <option value="Finland">Finland</option>
-      <option value="Sweden">Sweden</option>
-      <option value="Norway">Norway</option>
-      <option value="Estonia">Estonia</option>
-      <option value="Denmark">Denmark</option>
-    </select>
+        <label for="lname">Last Name*</label>
+        <input type="text" id="lname" name="lastname"
+          placeholder="Your last name.." required>
 
-    <label for="subject">Subject</label>
-    <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+        <label for="email">Email*</label>
+        <input type="text" id="email" name="email" placeholder="Your email.."
+          required>
 
-    <input id="show-popup" type="submit" value="Submit">
-  </form>
-</div>
-<div id="thankyou-popup">
-  Thank you for your message!
-</div>
-</body>
+        <label for="country">Country</label>
+        <select id="country" name="country">
+          <option value="Finland">Finland</option>
+          <option value="Sweden">Sweden</option>
+          <option value="Norway">Norway</option>
+          <option value="Estonia">Estonia</option>
+          <option value="Denmark">Denmark</option>
+        </select>
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.."
+          style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>A small solo person project on making my own speedometers for
+            others.</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Quick Links</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="about.html">Webrapport</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact Info</h3>
+          <p>Email: info@matts.com</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Address: Majstranden, Helsinki</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2025 Matts. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

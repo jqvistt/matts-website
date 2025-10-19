@@ -40,8 +40,6 @@ class Product {
   }
 }
 
-// an array to hold products
-// ...existing code...
 const products = [
   new Product(
     "Example Product",
@@ -128,6 +126,5 @@ const products = [
     "https://cdn.create.web.com/images/industries/common/images/placeholder-product-image-4x3.jpg"
   )
 ];
-// ...existing code...
 
 products.forEach((product) => product.display());
